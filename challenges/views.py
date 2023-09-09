@@ -19,21 +19,6 @@ challenges = {
     "december": "Create a list of personal or professional goals for the upcoming year and make a plan to achieve them.",
 }
 
-months_list = [
-    "january",
-    "february",
-    "march",
-    "april",
-    "may",
-    "june",
-    "july",
-    "august",
-    "september",
-    "october",
-    "november",
-    "december",
-]
-
 not_found_message = "This month is not supported!"
 
 
@@ -44,6 +29,8 @@ def monthly_challenge(request, month):
 
 
 def monthly_challenge_by_number(request, month):
+    months_list = list(challenges.keys())
+
     if month > len(months_list):
         return HttpResponseNotFound(not_found_message)
 
