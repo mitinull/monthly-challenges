@@ -21,13 +21,13 @@ challenges = {
     "december": "Create a list of personal or professional goals for the upcoming year and make a plan to achieve them.",
 }
 
-not_found_message = "This month is not supported!"
+not_found_message = "<h2 style='color:red'>This month is not supported!</h2>"
 
 
 def monthly_challenge(request, month):
     if not month in challenges:
         return HttpResponseNotFound(not_found_message)
-    return HttpResponse(challenges[month])
+    return HttpResponse(f"<h2 style='color:blue;'>{challenges[month]}</h2>")
 
 
 def monthly_challenge_by_number(request, month):
