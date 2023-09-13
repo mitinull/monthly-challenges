@@ -1,19 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
-    <title>{{ month|title }} Challenge</title>
-  </head>
-  <body>
-    <h1>{{ month|title }} Challenge</h1>
-    {% if challenge is not None %}
-    <h2>{{ challenge }}</h2>
-    {% else %}
-    <h3>No challenge Yet</h3>
-    {% endif %}
-  </body>
-</html>
+{% extends "base.html" %} {% block page_title %} {{ month|title }}
+Challenge {% endblock page_title %} {% block page_content %}
+<h1>{{ month|title }} Challenge</h1>
+{% if challenge is not None %}
+<h2>{{ challenge }}</h2>
+{% else %}
+<h3>No challenge Yet</h3>
+{% endif %} {% endblock page_content %}
