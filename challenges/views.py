@@ -47,10 +47,5 @@ def monthly_challenge_by_number(request, month):
 
 
 def list_of_months(request):
-    months_elements = [
-        f'<li><a href="{month}">{month.capitalize()}</a></li>'
-        for month in challenges.keys()
-    ]
-    return HttpResponse(
-        f"<h2 style='color:green;'>List of months</h2> <ul>{''.join(months_elements)}</ul>"
-    )
+    months = [month for month in challenges.keys()]
+    return render(request, "challenges/index.html", {"months": months})
