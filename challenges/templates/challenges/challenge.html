@@ -1,5 +1,11 @@
-{% extends "base.html" %} {% block page_title %} {{ month|title }}
-Challenge {% endblock page_title %} {% block page_content %}
+<!-- prettier-ignore -->
+
+{% extends "base.html" %} 
+
+{% block page_title %} {{ month|title }} Challenge {% endblock page_title %}
+
+{% block page_content %}
+{% include "challenges/includes/header.html" %}
 <h1>{{ month|title }} Challenge</h1>
 {% if challenge is not None %}
 <h2>{{ challenge }}</h2>
