@@ -1,6 +1,14 @@
+<!-- prettier-ignore -->
+
 {% extends "base.html" %}
 
+{% load static %}
+
 {% block page_title %}All Challenges{% endblock page_title %}
+
+{% block css_files %}
+  <link rel="stylesheet" href="{% static "challenges/styles.css" %}">
+{% endblock css_files %}
 
 {% block page_content %}
 {% include "challenges/includes/header.html" %}
