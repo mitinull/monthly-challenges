@@ -31,7 +31,7 @@ def monthly_challenge(request, month: str):
     return render(
         request,
         "challenges/challenge.html",
-        {"challenge": challenges[month], "month": month.capitalize()},
+        {"challenge": challenges[month], "month": month},
     )
 
 
