@@ -18,7 +18,7 @@ challenges = {
     "september": "Take a weekend getaway to explore a new city or town.",
     "october": "Challenge yourself to complete a physical fitness event, like a 5k run or a bike race.",
     "november": "Practice mindfulness and meditation for at least 15 minutes every day.",
-    "december": "Create a list of personal or professional goals for the upcoming year and make a plan to achieve them.",
+    "december": None,
 }
 
 not_found_message = "<h2 style='color:red'>This month is not supported!</h2>"

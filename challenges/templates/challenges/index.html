@@ -11,11 +11,11 @@
   <body>
     <h1>All Challenges</h1>
     <ul>
-      {%for month in months%}
+      {% for month in months %}
       <li>
         <a href="{%url "month-challenge" month=month %}">{{month|title}}</a>
       </li>
-      {%endfor%}
+      {% endfor %}
     </ul>
   </body>
 </html>
