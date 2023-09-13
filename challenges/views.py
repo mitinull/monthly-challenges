@@ -24,11 +24,15 @@ challenges = {
 not_found_message = "<h2 style='color:red'>This month is not supported!</h2>"
 
 
-def monthly_challenge(request, month):
+def monthly_challenge(request, month: str):
     if not month in challenges:
         return HttpResponseNotFound(not_found_message)
 
-    return render(request, "challenges/challenge.html")
+    return render(
+        request,
+        "challenges/challenge.html",
+        {"challenge": challenges[month], "month": month.capitalize()},
+    )
 
 
 def monthly_challenge_by_number(request, month):
