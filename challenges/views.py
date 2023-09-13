@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
+from django.http import Http404, HttpResponseNotFound, HttpResponseRedirect
 
 from django.urls import reverse
 
@@ -26,7 +26,7 @@ not_found_message = "<h2 style='color:red'>This month is not supported!</h2>"
 
 def monthly_challenge(request, month: str):
     if not month in challenges:
-        return HttpResponseNotFound(not_found_message)
+        raise Http404()
 
     return render(
         request,
@@ -39,7 +39,7 @@ def monthly_challenge_by_number(request, month):
     months_list = list(challenges.keys())
 
     if month > len(months_list):
-        return HttpResponseNotFound(not_found_message)
+        raise Http404()
 
     redirect_url = reverse("month-challenge", args=[months_list[month - 1]])
 
